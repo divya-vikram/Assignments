@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reaction Timer</title>
+    <style>
+        #shape {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reaction Tester</h1>
+    <p>Click on the boxes as soon as you can</p>
+    <div id="shape"></div>
+    <script>
+        function move() {
+            var left;
+            var top;
+            var wh;
+            left = Math.random();
+
+            var start = new Date().getTime();
+            document.getElementById("shape").onclick = function() {
+                document.getElementById("shape").style.display = "none";
+                var end = new Date().getTime();
+                var timeTaken = (end - start) / 1000;
+                alert(timeTaken);
+            }
+        }
+    </script>
+</body>
+</html>
